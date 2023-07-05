@@ -1,0 +1,200 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+     body{
+        width: 80%;
+        margin: auto;
+        padding: 0;
+        text-align: center;
+        align-items: center;
+        justify-content: space-between;
+        backface-visibility: hidden;
+        background-image: url(https://i.pinimg.com/originals/d8/28/2d/d8282d96170aa0ee6f5760667a291ec0.png);
+        background-size: cover;
+    }
+    a img{
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        float: right;
+        margin-top: 10px;
+        background: none;
+        margin-right: 20px;
+    }
+    img{
+        top: 20px;
+    }
+    #year{
+        text-align: center;
+    }
+    button{
+        background: linear-gradient(to bottom,blue, orange );
+        animation-name: time;
+        animation-duration: 5s;
+        animation-iteration-count: 100;
+        font-size: 20px;
+        height: 50px;
+        width: 450px;
+        opacity: 1;
+        font-family: monospace;
+        display: none;
+        word-spacing: 5px;
+        font-size: 20px;
+        margin-top: 10px;
+        text-align: center;
+        align-items: center;
+        border-radius: 0px 10px 0px 10px;
+        /* -webkit-animation-name: time; */
+        margin-top:50px ;
+        color:aliceblue;
+        outline: none;
+        /* margin-bottom: 1; */
+        border: none;
+        justify-content: space-between;
+        /* -webkit-animation-duration: 5s; */
+        animation: time 5s infinite;
+        /* -webkit-animation-iteration-count: 100; */
+    }
+    @keyframes time{
+        25%{
+            background: linear-gradient(to top, blue, orange);
+            box-shadow: 5px 5px 10px aqua;
+            opacity: 0;
+        }
+        50%{
+            background: linear-gradient(to bottom, blue, orange);
+            opacity: 0.25;
+        }
+        75%{
+            background: linear-gradient(to top, blue, orange);
+            box-shadow: 5px 5px 10px aqua;
+            opacity: 1;
+        }
+        100%{
+            background: linear-gradient(to bottom, blue, orange);
+            opacity: 0.5;
+        }
+    }
+    button:hover{
+        opacity: 1;
+        cursor: pointer;
+        outline: none;
+        /* display: none; */
+    }
+    input{
+        background: linear-gradient(to top, aqua, black);
+        color: black;
+        border-radius: 10px 10px 0px 10px;
+        margin-top: 50px;
+        width: 450px;
+        outline: none;
+        border: none;
+        background: unset;
+        border-bottom: 5px aqua solid;
+        height: 40px;
+        font-family: monospace;
+        font-size: 20px;
+    }
+    input:focus{
+    background-color: aliceblue; 
+    }
+     img{
+        border-radius: 50%;
+            height: 150px;
+            width: 150px;
+            margin-top: 80px;
+        }
+        i{
+        color: aliceblue;
+        margin-right: 10px;
+        }
+        select{
+            background: none;
+            border: none;
+            outline: none;
+            border-bottom: 5px aqua solid;
+            width: 450px;
+            height: 40px;
+            font-size: 20px;
+            border-radius: 10px 10px 0px 10px;
+        }
+        h1{
+         text-align: center;
+         color:aliceblue;
+         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        i{
+            color: aqua;
+        }
+        #bac{
+            padding: 50px;
+            width: 500px;
+            margin: 0 auto;
+            height: 700px;
+            border-radius: 40px;
+            border-left: 1px white solid;
+            border-right: 1px white solid;
+            border-top: 1px white solid;
+            border-bottom: 1px white solid;
+            /* margin-top: 100px; */
+            margin-top: 25px;
+            backdrop-filter: blur(50px);
+        }
+        #jus{
+            justify-content: center;
+        }
+    </style>
+    <title>ACCOUNT</title>
+    </head>
+    <body>
+        <!-- <div id="accept"></div> -->
+        <form accept="true"> 
+        <div id="jus">
+        <div id="bac">
+    <img id="m" src="https://cdn.uzmovi.com/v1/images/noavatar.png?v=2.6.4">
+    <div id="year">
+        <i class="fa fa-user fa-2x" aria-hidden="true"></i>
+        <input type="text" id="name" placeholder="Username" required>
+    <br>
+    <i class="fa fa-envelope fa-2x" aria-hidden="true"></i>
+        <input type="email" id="email" placeholder="Email" required>
+    <br>
+    <i class="fa fa-calendar fa-2x" aria-hidden="true"></i>
+    <input type="date" id="password" placeholder="Date birth" required>
+    <br>                         
+    <i class="fa fa-phone fa-2x" aria-hidden="true"></i>
+    <input type="number" id="surname" placeholder="+111111111111" maxlength="13" required>
+    <br>
+</div>
+    <div id="button"></div>
+    <button id="btn" onclick="button()">SEND</button>
+    </div>
+    </div>
+</form>
+    <script>
+     document.getElementById("btn").onclick = () =>{
+                            const person = {
+                name : document.getElementById("name").value,
+                phone_number : document.getElementById("surname").value,
+                email : document.getElementById("email").value,
+                date_birth : document.getElementById("password").value
+            }
+            console.log(person)
+            let name = person.name
+            // console.log(name.substr(0, 9))
+            // console.log(name.indexof("I"))
+        }
+        document.getElementById('surname').addEventListener('input',()=>{
+            if(document.getElementById("surname").length = 13){
+             
+            }
+        })
+        </script>
+    </body>
+    </html>
